@@ -20,9 +20,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req,res) => {
-  res.render('maitance.hbs');
-});
+
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
 })
@@ -41,6 +39,11 @@ app.get('/', (req, res) => {
 app.get ('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: 'About page',
+  });
+});
+app.get ('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects page',
   });
 });
 
